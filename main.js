@@ -14,10 +14,6 @@ for (let i = 0; i < value; i++) {
 }
 
 
-
-const subSquaresClass = document.querySelectorAll('.subSquares');
-
-
 const range = document.querySelector('#range');
 const rangeInfo = document.querySelector('.range-info');
 range.addEventListener('input', () => {
@@ -27,9 +23,18 @@ range.addEventListener('input', () => {
     rangeInfo.textContent = value +" x " + value;
     for (let i = 0; i < value; i++) {
         subSquares.appendChild(square.cloneNode(true));
-        console.log('subsqaures -'+i);
     }
     for (let i = 0; i < value; i++) {
         squares.appendChild(subSquares.cloneNode(true));
     }
+})
+
+const fade = document.querySelector('.fade');
+fade.addEventListener('click', () => {
+    const gridElements = document.querySelectorAll('.square');
+    gridElements.forEach(element => {
+        element.addEventListener('mouseover', () => {
+            element.style.cssText = "background-color: gray;";
+        })
+    })
 })
