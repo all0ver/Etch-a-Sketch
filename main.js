@@ -29,12 +29,34 @@ range.addEventListener('input', () => {
     }
 })
 
-const fade = document.querySelector('.fade');
-fade.addEventListener('click', () => {
+
+const brush = document.querySelector('.brush');
+brush.addEventListener('click', () => {
     const gridElements = document.querySelectorAll('.square');
     gridElements.forEach(element => {
         element.addEventListener('mouseover', () => {
-            element.style.cssText = "background-color: gray;";
+            element.style.cssText = "background-color: " + document.querySelector('#color').value;
+        })
+    })
+})
+
+const eraser = document.querySelector('.eraser');
+
+eraser.addEventListener('click', () => {
+    const gridElements = document.querySelectorAll('.square');
+    gridElements.forEach(element => {
+        element.addEventListener('mouseover', () => {
+            element.style.cssText = "background-color: white";
+        })
+    })
+})
+
+const rainbow = document.querySelector('.rainbow');
+rainbow.addEventListener('click', () => {
+    const gridElements = document.querySelectorAll('.square');
+    gridElements.forEach(element => {
+        element.addEventListener('mouseover', () => {
+            element.style.cssText = "background-color: rgb("+Math.random()*255+"," +Math.random()*255+","+Math.random()*255+");";
         })
     })
 })

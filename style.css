@@ -9,8 +9,47 @@ body,
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
+
+.content {
+    gap: 2rem;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#range {
+    appearance: none;
+    background-color: rgb(177, 177, 177);
+    height: 2px;
+    accent-color: blueviolet;
+}
+
+
+#color {
+    border-radius: 50%;
+    width: 50px;
+    aspect-ratio: 1/1;
+    height: 50px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#color::-webkit-color-swatch {
+    border-radius: 10%;
+    border: none;
+  }
+#color::-moz-color-swatch {
+    border-radius: 10%;
+    border: none;
+  }
+
 .squares {
     display: flex;
     align-items: center;
@@ -32,4 +71,14 @@ body,
 .square {
     flex: 1;
     aspect-ratio: 1/1;
+    cursor: pointer;
 }
+
+button {
+    width: 100px;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
